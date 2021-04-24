@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package services;
+
+option java_multiple_files = true;
+option java_package = "br.dev.andreferreira.services";
+
+import "models/game.proto";
+
+message GameResponse {
+  repeated models.Game games = 1;
+}
