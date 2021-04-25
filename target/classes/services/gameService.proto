@@ -9,6 +9,7 @@ import "models/game.proto";
 import "services/GameResponse.proto";
 import "services/gamerequest.proto";
 import "services/gamerequestbyid.proto";
+import "services/gamedeletedresponse.proto";
 import "google/protobuf/empty.proto";
 
 service GameService {
@@ -20,4 +21,7 @@ service GameService {
 
   // Get game by Id
   rpc findById(services.GameRequestById) returns (models.Game);
+
+  // Delete game by id
+  rpc deleteByid(services.GameRequestById) returns (services.GameDeletedResponse);
 }

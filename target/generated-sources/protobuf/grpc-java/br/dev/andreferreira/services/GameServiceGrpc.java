@@ -123,6 +123,38 @@ public final class GameServiceGrpc {
      return getFindByIdMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequestById,
+      br.dev.andreferreira.services.GameDeletedResponse> getDeleteByidMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "deleteByid",
+      requestType = br.dev.andreferreira.services.GameRequestById.class,
+      responseType = br.dev.andreferreira.services.GameDeletedResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequestById,
+      br.dev.andreferreira.services.GameDeletedResponse> getDeleteByidMethod() {
+    io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequestById, br.dev.andreferreira.services.GameDeletedResponse> getDeleteByidMethod;
+    if ((getDeleteByidMethod = GameServiceGrpc.getDeleteByidMethod) == null) {
+      synchronized (GameServiceGrpc.class) {
+        if ((getDeleteByidMethod = GameServiceGrpc.getDeleteByidMethod) == null) {
+          GameServiceGrpc.getDeleteByidMethod = getDeleteByidMethod = 
+              io.grpc.MethodDescriptor.<br.dev.andreferreira.services.GameRequestById, br.dev.andreferreira.services.GameDeletedResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "services.GameService", "deleteByid"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  br.dev.andreferreira.services.GameRequestById.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  br.dev.andreferreira.services.GameDeletedResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new GameServiceMethodDescriptorSupplier("deleteByid"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteByidMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -180,6 +212,16 @@ public final class GameServiceGrpc {
       asyncUnimplementedUnaryCall(getFindByIdMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Delete game by id
+     * </pre>
+     */
+    public void deleteByid(br.dev.andreferreira.services.GameRequestById request,
+        io.grpc.stub.StreamObserver<br.dev.andreferreira.services.GameDeletedResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteByidMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -203,6 +245,13 @@ public final class GameServiceGrpc {
                 br.dev.andreferreira.services.GameRequestById,
                 br.dev.andreferreira.entities.Game>(
                   this, METHODID_FIND_BY_ID)))
+          .addMethod(
+            getDeleteByidMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                br.dev.andreferreira.services.GameRequestById,
+                br.dev.andreferreira.services.GameDeletedResponse>(
+                  this, METHODID_DELETE_BYID)))
           .build();
     }
   }
@@ -257,6 +306,17 @@ public final class GameServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getFindByIdMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Delete game by id
+     * </pre>
+     */
+    public void deleteByid(br.dev.andreferreira.services.GameRequestById request,
+        io.grpc.stub.StreamObserver<br.dev.andreferreira.services.GameDeletedResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteByidMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -305,6 +365,16 @@ public final class GameServiceGrpc {
     public br.dev.andreferreira.entities.Game findById(br.dev.andreferreira.services.GameRequestById request) {
       return blockingUnaryCall(
           getChannel(), getFindByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete game by id
+     * </pre>
+     */
+    public br.dev.andreferreira.services.GameDeletedResponse deleteByid(br.dev.andreferreira.services.GameRequestById request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteByidMethod(), getCallOptions(), request);
     }
   }
 
@@ -358,11 +428,23 @@ public final class GameServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getFindByIdMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Delete game by id
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<br.dev.andreferreira.services.GameDeletedResponse> deleteByid(
+        br.dev.andreferreira.services.GameRequestById request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteByidMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ALL_GAMES = 0;
   private static final int METHODID_CREATE_NEW_GAME = 1;
   private static final int METHODID_FIND_BY_ID = 2;
+  private static final int METHODID_DELETE_BYID = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -392,6 +474,10 @@ public final class GameServiceGrpc {
         case METHODID_FIND_BY_ID:
           serviceImpl.findById((br.dev.andreferreira.services.GameRequestById) request,
               (io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game>) responseObserver);
+          break;
+        case METHODID_DELETE_BYID:
+          serviceImpl.deleteByid((br.dev.andreferreira.services.GameRequestById) request,
+              (io.grpc.stub.StreamObserver<br.dev.andreferreira.services.GameDeletedResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -457,6 +543,7 @@ public final class GameServiceGrpc {
               .addMethod(getGetAllGamesMethod())
               .addMethod(getCreateNewGameMethod())
               .addMethod(getFindByIdMethod())
+              .addMethod(getDeleteByidMethod())
               .build();
         }
       }
