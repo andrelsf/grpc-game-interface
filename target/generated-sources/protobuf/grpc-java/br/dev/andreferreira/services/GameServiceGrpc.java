@@ -91,6 +91,38 @@ public final class GameServiceGrpc {
      return getCreateNewGameMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequestById,
+      br.dev.andreferreira.entities.Game> getFindByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "findById",
+      requestType = br.dev.andreferreira.services.GameRequestById.class,
+      responseType = br.dev.andreferreira.entities.Game.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequestById,
+      br.dev.andreferreira.entities.Game> getFindByIdMethod() {
+    io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequestById, br.dev.andreferreira.entities.Game> getFindByIdMethod;
+    if ((getFindByIdMethod = GameServiceGrpc.getFindByIdMethod) == null) {
+      synchronized (GameServiceGrpc.class) {
+        if ((getFindByIdMethod = GameServiceGrpc.getFindByIdMethod) == null) {
+          GameServiceGrpc.getFindByIdMethod = getFindByIdMethod = 
+              io.grpc.MethodDescriptor.<br.dev.andreferreira.services.GameRequestById, br.dev.andreferreira.entities.Game>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "services.GameService", "findById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  br.dev.andreferreira.services.GameRequestById.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  br.dev.andreferreira.entities.Game.getDefaultInstance()))
+                  .setSchemaDescriptor(new GameServiceMethodDescriptorSupplier("findById"))
+                  .build();
+          }
+        }
+     }
+     return getFindByIdMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +170,16 @@ public final class GameServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateNewGameMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Get game by Id
+     * </pre>
+     */
+    public void findById(br.dev.andreferreira.services.GameRequestById request,
+        io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game> responseObserver) {
+      asyncUnimplementedUnaryCall(getFindByIdMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -154,6 +196,13 @@ public final class GameServiceGrpc {
                 br.dev.andreferreira.services.GameRequest,
                 br.dev.andreferreira.entities.Game>(
                   this, METHODID_CREATE_NEW_GAME)))
+          .addMethod(
+            getFindByIdMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                br.dev.andreferreira.services.GameRequestById,
+                br.dev.andreferreira.entities.Game>(
+                  this, METHODID_FIND_BY_ID)))
           .build();
     }
   }
@@ -197,6 +246,17 @@ public final class GameServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCreateNewGameMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Get game by Id
+     * </pre>
+     */
+    public void findById(br.dev.andreferreira.services.GameRequestById request,
+        io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getFindByIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -235,6 +295,16 @@ public final class GameServiceGrpc {
     public br.dev.andreferreira.entities.Game createNewGame(br.dev.andreferreira.services.GameRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateNewGameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get game by Id
+     * </pre>
+     */
+    public br.dev.andreferreira.entities.Game findById(br.dev.andreferreira.services.GameRequestById request) {
+      return blockingUnaryCall(
+          getChannel(), getFindByIdMethod(), getCallOptions(), request);
     }
   }
 
@@ -277,10 +347,22 @@ public final class GameServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCreateNewGameMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Get game by Id
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<br.dev.andreferreira.entities.Game> findById(
+        br.dev.andreferreira.services.GameRequestById request) {
+      return futureUnaryCall(
+          getChannel().newCall(getFindByIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ALL_GAMES = 0;
   private static final int METHODID_CREATE_NEW_GAME = 1;
+  private static final int METHODID_FIND_BY_ID = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -305,6 +387,10 @@ public final class GameServiceGrpc {
           break;
         case METHODID_CREATE_NEW_GAME:
           serviceImpl.createNewGame((br.dev.andreferreira.services.GameRequest) request,
+              (io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game>) responseObserver);
+          break;
+        case METHODID_FIND_BY_ID:
+          serviceImpl.findById((br.dev.andreferreira.services.GameRequestById) request,
               (io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game>) responseObserver);
           break;
         default:
@@ -370,6 +456,7 @@ public final class GameServiceGrpc {
               .setSchemaDescriptor(new GameServiceFileDescriptorSupplier())
               .addMethod(getGetAllGamesMethod())
               .addMethod(getCreateNewGameMethod())
+              .addMethod(getFindByIdMethod())
               .build();
         }
       }

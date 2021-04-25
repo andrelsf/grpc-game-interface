@@ -25,12 +25,15 @@ public final class GameServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032services/gameService.proto\022\010services\032\021" +
       "models/game.proto\032\033services/GameResponse" +
-      ".proto\032\032services/gamerequest.proto\032\033goog" +
-      "le/protobuf/empty.proto2\202\001\n\013GameService\022" +
-      "=\n\013getAllGames\022\026.google.protobuf.Empty\032\026" +
-      ".services.GameResponse\0224\n\rcreateNewGame\022" +
-      "\025.services.GameRequest\032\014.models.GameB!\n\035" +
-      "br.dev.andreferreira.servicesP\001b\006proto3"
+      ".proto\032\032services/gamerequest.proto\032\036serv" +
+      "ices/gamerequestbyid.proto\032\033google/proto" +
+      "buf/empty.proto2\267\001\n\013GameService\022=\n\013getAl" +
+      "lGames\022\026.google.protobuf.Empty\032\026.service" +
+      "s.GameResponse\0224\n\rcreateNewGame\022\025.servic" +
+      "es.GameRequest\032\014.models.Game\0223\n\010findById" +
+      "\022\031.services.GameRequestById\032\014.models.Gam" +
+      "eB!\n\035br.dev.andreferreira.servicesP\001b\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -46,11 +49,13 @@ public final class GameServiceOuterClass {
           br.dev.andreferreira.entities.GameOuterClass.getDescriptor(),
           br.dev.andreferreira.services.GameResponseOuterClass.getDescriptor(),
           br.dev.andreferreira.services.Gamerequest.getDescriptor(),
+          br.dev.andreferreira.services.Gamerequestbyid.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
         }, assigner);
     br.dev.andreferreira.entities.GameOuterClass.getDescriptor();
     br.dev.andreferreira.services.GameResponseOuterClass.getDescriptor();
     br.dev.andreferreira.services.Gamerequest.getDescriptor();
+    br.dev.andreferreira.services.Gamerequestbyid.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 
