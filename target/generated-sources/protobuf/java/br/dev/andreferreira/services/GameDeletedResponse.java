@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private GameDeletedResponse() {
     gameId_ = 0L;
+    status_ = 0;
   }
 
   @java.lang.Override
@@ -46,6 +47,12 @@ private static final long serialVersionUID = 0L;
           case 8: {
 
             gameId_ = input.readInt64();
+            break;
+          }
+          case 16: {
+            int rawValue = input.readEnum();
+
+            status_ = rawValue;
             break;
           }
           default: {
@@ -89,6 +96,23 @@ private static final long serialVersionUID = 0L;
     return gameId_;
   }
 
+  public static final int STATUS_FIELD_NUMBER = 2;
+  private int status_;
+  /**
+   * <code>.services.StatusResponse status = 2;</code>
+   */
+  public int getStatusValue() {
+    return status_;
+  }
+  /**
+   * <code>.services.StatusResponse status = 2;</code>
+   */
+  public br.dev.andreferreira.services.StatusResponse getStatus() {
+    @SuppressWarnings("deprecation")
+    br.dev.andreferreira.services.StatusResponse result = br.dev.andreferreira.services.StatusResponse.valueOf(status_);
+    return result == null ? br.dev.andreferreira.services.StatusResponse.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -106,6 +130,9 @@ private static final long serialVersionUID = 0L;
     if (gameId_ != 0L) {
       output.writeInt64(1, gameId_);
     }
+    if (status_ != br.dev.andreferreira.services.StatusResponse.UNKNOWN.getNumber()) {
+      output.writeEnum(2, status_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -118,6 +145,10 @@ private static final long serialVersionUID = 0L;
     if (gameId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, gameId_);
+    }
+    if (status_ != br.dev.andreferreira.services.StatusResponse.UNKNOWN.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, status_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -137,6 +168,7 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getGameId()
         == other.getGameId());
+    result = result && status_ == other.status_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -151,6 +183,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + GAMEID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getGameId());
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + status_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -286,6 +320,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       gameId_ = 0L;
 
+      status_ = 0;
+
       return this;
     }
 
@@ -313,6 +349,7 @@ private static final long serialVersionUID = 0L;
     public br.dev.andreferreira.services.GameDeletedResponse buildPartial() {
       br.dev.andreferreira.services.GameDeletedResponse result = new br.dev.andreferreira.services.GameDeletedResponse(this);
       result.gameId_ = gameId_;
+      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -363,6 +400,9 @@ private static final long serialVersionUID = 0L;
       if (other == br.dev.andreferreira.services.GameDeletedResponse.getDefaultInstance()) return this;
       if (other.getGameId() != 0L) {
         setGameId(other.getGameId());
+      }
+      if (other.status_ != 0) {
+        setStatusValue(other.getStatusValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -415,6 +455,51 @@ private static final long serialVersionUID = 0L;
     public Builder clearGameId() {
       
       gameId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int status_ = 0;
+    /**
+     * <code>.services.StatusResponse status = 2;</code>
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.services.StatusResponse status = 2;</code>
+     */
+    public Builder setStatusValue(int value) {
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.services.StatusResponse status = 2;</code>
+     */
+    public br.dev.andreferreira.services.StatusResponse getStatus() {
+      @SuppressWarnings("deprecation")
+      br.dev.andreferreira.services.StatusResponse result = br.dev.andreferreira.services.StatusResponse.valueOf(status_);
+      return result == null ? br.dev.andreferreira.services.StatusResponse.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.services.StatusResponse status = 2;</code>
+     */
+    public Builder setStatus(br.dev.andreferreira.services.StatusResponse value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.services.StatusResponse status = 2;</code>
+     */
+    public Builder clearStatus() {
+      
+      status_ = 0;
       onChanged();
       return this;
     }

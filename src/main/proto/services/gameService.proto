@@ -23,5 +23,5 @@ service GameService {
   rpc findById(services.GameRequestById) returns (models.Game);
 
   // Delete game by id
-  rpc deleteByid(services.GameRequestById) returns (services.GameDeletedResponse);
+  rpc deleteById(services.GameRequestById) returns (services.GameDeletedResponse);
 }

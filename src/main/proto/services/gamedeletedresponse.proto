@@ -5,6 +5,9 @@ package services;
 option java_multiple_files = true;
 option java_package = "br.dev.andreferreira.services";
 
+import "services/statusresponse.proto";
+
 message GameDeletedResponse {
   int64 gameId = 1;
+  StatusResponse status = 2;
 }

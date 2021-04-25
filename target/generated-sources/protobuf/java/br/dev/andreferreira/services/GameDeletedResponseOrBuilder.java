@@ -11,4 +11,13 @@ public interface GameDeletedResponseOrBuilder extends
    * <code>int64 gameId = 1;</code>
    */
   long getGameId();
+
+  /**
+   * <code>.services.StatusResponse status = 2;</code>
+   */
+  int getStatusValue();
+  /**
+   * <code>.services.StatusResponse status = 2;</code>
+   */
+  br.dev.andreferreira.services.StatusResponse getStatus();
 }

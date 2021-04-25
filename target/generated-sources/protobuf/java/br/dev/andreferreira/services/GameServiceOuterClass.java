@@ -33,7 +33,7 @@ public final class GameServiceOuterClass {
       "meResponse\0224\n\rcreateNewGame\022\025.services.G" +
       "ameRequest\032\014.models.Game\0223\n\010findById\022\031.s" +
       "ervices.GameRequestById\032\014.models.Game\022F\n" +
-      "\ndeleteByid\022\031.services.GameRequestById\032\035" +
+      "\ndeleteById\022\031.services.GameRequestById\032\035" +
       ".services.GameDeletedResponseB!\n\035br.dev." +
       "andreferreira.servicesP\001b\006proto3"
     };
