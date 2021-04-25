@@ -8,26 +8,26 @@ public interface GameResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
   java.util.List<br.dev.andreferreira.entities.Game> 
-      getGamesList();
+      getGameList();
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
-  br.dev.andreferreira.entities.Game getGames(int index);
+  br.dev.andreferreira.entities.Game getGame(int index);
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
-  int getGamesCount();
+  int getGameCount();
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
   java.util.List<? extends br.dev.andreferreira.entities.GameOrBuilder> 
-      getGamesOrBuilderList();
+      getGameOrBuilderList();
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
-  br.dev.andreferreira.entities.GameOrBuilder getGamesOrBuilder(
+  br.dev.andreferreira.entities.GameOrBuilder getGameOrBuilder(
       int index);
 }

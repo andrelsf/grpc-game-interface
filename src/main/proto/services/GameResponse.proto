@@ -8,5 +8,5 @@ option java_package = "br.dev.andreferreira.services";
 import "models/game.proto";
 
 message GameResponse {
-  repeated models.Game games = 1;
+  repeated models.Game game = 1;
 }

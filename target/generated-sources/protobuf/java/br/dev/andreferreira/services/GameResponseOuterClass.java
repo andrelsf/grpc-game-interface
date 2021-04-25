@@ -29,9 +29,9 @@ public final class GameResponseOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033services/GameResponse.proto\022\010services\032" +
-      "\021models/game.proto\"+\n\014GameResponse\022\033\n\005ga" +
-      "mes\030\001 \003(\0132\014.models.GameB!\n\035br.dev.andref" +
-      "erreira.servicesP\001b\006proto3"
+      "\021models/game.proto\"*\n\014GameResponse\022\032\n\004ga" +
+      "me\030\001 \003(\0132\014.models.GameB!\n\035br.dev.andrefe" +
+      "rreira.servicesP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -51,7 +51,7 @@ public final class GameResponseOuterClass {
     internal_static_services_GameResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_services_GameResponse_descriptor,
-        new java.lang.String[] { "Games", });
+        new java.lang.String[] { "Game", });
     br.dev.andreferreira.entities.GameOuterClass.getDescriptor();
   }
 

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GameResponse() {
-    games_ = java.util.Collections.emptyList();
+    game_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -45,10 +45,10 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              games_ = new java.util.ArrayList<br.dev.andreferreira.entities.Game>();
+              game_ = new java.util.ArrayList<br.dev.andreferreira.entities.Game>();
               mutable_bitField0_ |= 0x00000001;
             }
-            games_.add(
+            game_.add(
                 input.readMessage(br.dev.andreferreira.entities.Game.parser(), extensionRegistry));
             break;
           }
@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        games_ = java.util.Collections.unmodifiableList(games_);
+        game_ = java.util.Collections.unmodifiableList(game_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -87,39 +87,39 @@ private static final long serialVersionUID = 0L;
             br.dev.andreferreira.services.GameResponse.class, br.dev.andreferreira.services.GameResponse.Builder.class);
   }
 
-  public static final int GAMES_FIELD_NUMBER = 1;
-  private java.util.List<br.dev.andreferreira.entities.Game> games_;
+  public static final int GAME_FIELD_NUMBER = 1;
+  private java.util.List<br.dev.andreferreira.entities.Game> game_;
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
-  public java.util.List<br.dev.andreferreira.entities.Game> getGamesList() {
-    return games_;
+  public java.util.List<br.dev.andreferreira.entities.Game> getGameList() {
+    return game_;
   }
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
   public java.util.List<? extends br.dev.andreferreira.entities.GameOrBuilder> 
-      getGamesOrBuilderList() {
-    return games_;
+      getGameOrBuilderList() {
+    return game_;
   }
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
-  public int getGamesCount() {
-    return games_.size();
+  public int getGameCount() {
+    return game_.size();
   }
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
-  public br.dev.andreferreira.entities.Game getGames(int index) {
-    return games_.get(index);
+  public br.dev.andreferreira.entities.Game getGame(int index) {
+    return game_.get(index);
   }
   /**
-   * <code>repeated .models.Game games = 1;</code>
+   * <code>repeated .models.Game game = 1;</code>
    */
-  public br.dev.andreferreira.entities.GameOrBuilder getGamesOrBuilder(
+  public br.dev.andreferreira.entities.GameOrBuilder getGameOrBuilder(
       int index) {
-    return games_.get(index);
+    return game_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -136,8 +136,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < games_.size(); i++) {
-      output.writeMessage(1, games_.get(i));
+    for (int i = 0; i < game_.size(); i++) {
+      output.writeMessage(1, game_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -148,9 +148,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < games_.size(); i++) {
+    for (int i = 0; i < game_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, games_.get(i));
+        .computeMessageSize(1, game_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -168,8 +168,8 @@ private static final long serialVersionUID = 0L;
     br.dev.andreferreira.services.GameResponse other = (br.dev.andreferreira.services.GameResponse) obj;
 
     boolean result = true;
-    result = result && getGamesList()
-        .equals(other.getGamesList());
+    result = result && getGameList()
+        .equals(other.getGameList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -181,9 +181,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getGamesCount() > 0) {
-      hash = (37 * hash) + GAMES_FIELD_NUMBER;
-      hash = (53 * hash) + getGamesList().hashCode();
+    if (getGameCount() > 0) {
+      hash = (37 * hash) + GAME_FIELD_NUMBER;
+      hash = (53 * hash) + getGameList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -313,17 +313,17 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getGamesFieldBuilder();
+        getGameFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gamesBuilder_ == null) {
-        games_ = java.util.Collections.emptyList();
+      if (gameBuilder_ == null) {
+        game_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        gamesBuilder_.clear();
+        gameBuilder_.clear();
       }
       return this;
     }
@@ -352,14 +352,14 @@ private static final long serialVersionUID = 0L;
     public br.dev.andreferreira.services.GameResponse buildPartial() {
       br.dev.andreferreira.services.GameResponse result = new br.dev.andreferreira.services.GameResponse(this);
       int from_bitField0_ = bitField0_;
-      if (gamesBuilder_ == null) {
+      if (gameBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          games_ = java.util.Collections.unmodifiableList(games_);
+          game_ = java.util.Collections.unmodifiableList(game_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.games_ = games_;
+        result.game_ = game_;
       } else {
-        result.games_ = gamesBuilder_.build();
+        result.game_ = gameBuilder_.build();
       }
       onBuilt();
       return result;
@@ -409,29 +409,29 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(br.dev.andreferreira.services.GameResponse other) {
       if (other == br.dev.andreferreira.services.GameResponse.getDefaultInstance()) return this;
-      if (gamesBuilder_ == null) {
-        if (!other.games_.isEmpty()) {
-          if (games_.isEmpty()) {
-            games_ = other.games_;
+      if (gameBuilder_ == null) {
+        if (!other.game_.isEmpty()) {
+          if (game_.isEmpty()) {
+            game_ = other.game_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureGamesIsMutable();
-            games_.addAll(other.games_);
+            ensureGameIsMutable();
+            game_.addAll(other.game_);
           }
           onChanged();
         }
       } else {
-        if (!other.games_.isEmpty()) {
-          if (gamesBuilder_.isEmpty()) {
-            gamesBuilder_.dispose();
-            gamesBuilder_ = null;
-            games_ = other.games_;
+        if (!other.game_.isEmpty()) {
+          if (gameBuilder_.isEmpty()) {
+            gameBuilder_.dispose();
+            gameBuilder_ = null;
+            game_ = other.game_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            gamesBuilder_ = 
+            gameBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getGamesFieldBuilder() : null;
+                 getGameFieldBuilder() : null;
           } else {
-            gamesBuilder_.addAllMessages(other.games_);
+            gameBuilder_.addAllMessages(other.game_);
           }
         }
       }
@@ -465,244 +465,244 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<br.dev.andreferreira.entities.Game> games_ =
+    private java.util.List<br.dev.andreferreira.entities.Game> game_ =
       java.util.Collections.emptyList();
-    private void ensureGamesIsMutable() {
+    private void ensureGameIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        games_ = new java.util.ArrayList<br.dev.andreferreira.entities.Game>(games_);
+        game_ = new java.util.ArrayList<br.dev.andreferreira.entities.Game>(game_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        br.dev.andreferreira.entities.Game, br.dev.andreferreira.entities.Game.Builder, br.dev.andreferreira.entities.GameOrBuilder> gamesBuilder_;
+        br.dev.andreferreira.entities.Game, br.dev.andreferreira.entities.Game.Builder, br.dev.andreferreira.entities.GameOrBuilder> gameBuilder_;
 
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public java.util.List<br.dev.andreferreira.entities.Game> getGamesList() {
-      if (gamesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(games_);
+    public java.util.List<br.dev.andreferreira.entities.Game> getGameList() {
+      if (gameBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(game_);
       } else {
-        return gamesBuilder_.getMessageList();
+        return gameBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public int getGamesCount() {
-      if (gamesBuilder_ == null) {
-        return games_.size();
+    public int getGameCount() {
+      if (gameBuilder_ == null) {
+        return game_.size();
       } else {
-        return gamesBuilder_.getCount();
+        return gameBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public br.dev.andreferreira.entities.Game getGames(int index) {
-      if (gamesBuilder_ == null) {
-        return games_.get(index);
+    public br.dev.andreferreira.entities.Game getGame(int index) {
+      if (gameBuilder_ == null) {
+        return game_.get(index);
       } else {
-        return gamesBuilder_.getMessage(index);
+        return gameBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder setGames(
+    public Builder setGame(
         int index, br.dev.andreferreira.entities.Game value) {
-      if (gamesBuilder_ == null) {
+      if (gameBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureGamesIsMutable();
-        games_.set(index, value);
+        ensureGameIsMutable();
+        game_.set(index, value);
         onChanged();
       } else {
-        gamesBuilder_.setMessage(index, value);
+        gameBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder setGames(
+    public Builder setGame(
         int index, br.dev.andreferreira.entities.Game.Builder builderForValue) {
-      if (gamesBuilder_ == null) {
-        ensureGamesIsMutable();
-        games_.set(index, builderForValue.build());
+      if (gameBuilder_ == null) {
+        ensureGameIsMutable();
+        game_.set(index, builderForValue.build());
         onChanged();
       } else {
-        gamesBuilder_.setMessage(index, builderForValue.build());
+        gameBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder addGames(br.dev.andreferreira.entities.Game value) {
-      if (gamesBuilder_ == null) {
+    public Builder addGame(br.dev.andreferreira.entities.Game value) {
+      if (gameBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureGamesIsMutable();
-        games_.add(value);
+        ensureGameIsMutable();
+        game_.add(value);
         onChanged();
       } else {
-        gamesBuilder_.addMessage(value);
+        gameBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder addGames(
+    public Builder addGame(
         int index, br.dev.andreferreira.entities.Game value) {
-      if (gamesBuilder_ == null) {
+      if (gameBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureGamesIsMutable();
-        games_.add(index, value);
+        ensureGameIsMutable();
+        game_.add(index, value);
         onChanged();
       } else {
-        gamesBuilder_.addMessage(index, value);
+        gameBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder addGames(
+    public Builder addGame(
         br.dev.andreferreira.entities.Game.Builder builderForValue) {
-      if (gamesBuilder_ == null) {
-        ensureGamesIsMutable();
-        games_.add(builderForValue.build());
+      if (gameBuilder_ == null) {
+        ensureGameIsMutable();
+        game_.add(builderForValue.build());
         onChanged();
       } else {
-        gamesBuilder_.addMessage(builderForValue.build());
+        gameBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder addGames(
+    public Builder addGame(
         int index, br.dev.andreferreira.entities.Game.Builder builderForValue) {
-      if (gamesBuilder_ == null) {
-        ensureGamesIsMutable();
-        games_.add(index, builderForValue.build());
+      if (gameBuilder_ == null) {
+        ensureGameIsMutable();
+        game_.add(index, builderForValue.build());
         onChanged();
       } else {
-        gamesBuilder_.addMessage(index, builderForValue.build());
+        gameBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder addAllGames(
+    public Builder addAllGame(
         java.lang.Iterable<? extends br.dev.andreferreira.entities.Game> values) {
-      if (gamesBuilder_ == null) {
-        ensureGamesIsMutable();
+      if (gameBuilder_ == null) {
+        ensureGameIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, games_);
+            values, game_);
         onChanged();
       } else {
-        gamesBuilder_.addAllMessages(values);
+        gameBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder clearGames() {
-      if (gamesBuilder_ == null) {
-        games_ = java.util.Collections.emptyList();
+    public Builder clearGame() {
+      if (gameBuilder_ == null) {
+        game_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        gamesBuilder_.clear();
+        gameBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public Builder removeGames(int index) {
-      if (gamesBuilder_ == null) {
-        ensureGamesIsMutable();
-        games_.remove(index);
+    public Builder removeGame(int index) {
+      if (gameBuilder_ == null) {
+        ensureGameIsMutable();
+        game_.remove(index);
         onChanged();
       } else {
-        gamesBuilder_.remove(index);
+        gameBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public br.dev.andreferreira.entities.Game.Builder getGamesBuilder(
+    public br.dev.andreferreira.entities.Game.Builder getGameBuilder(
         int index) {
-      return getGamesFieldBuilder().getBuilder(index);
+      return getGameFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public br.dev.andreferreira.entities.GameOrBuilder getGamesOrBuilder(
+    public br.dev.andreferreira.entities.GameOrBuilder getGameOrBuilder(
         int index) {
-      if (gamesBuilder_ == null) {
-        return games_.get(index);  } else {
-        return gamesBuilder_.getMessageOrBuilder(index);
+      if (gameBuilder_ == null) {
+        return game_.get(index);  } else {
+        return gameBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
     public java.util.List<? extends br.dev.andreferreira.entities.GameOrBuilder> 
-         getGamesOrBuilderList() {
-      if (gamesBuilder_ != null) {
-        return gamesBuilder_.getMessageOrBuilderList();
+         getGameOrBuilderList() {
+      if (gameBuilder_ != null) {
+        return gameBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(games_);
+        return java.util.Collections.unmodifiableList(game_);
       }
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public br.dev.andreferreira.entities.Game.Builder addGamesBuilder() {
-      return getGamesFieldBuilder().addBuilder(
+    public br.dev.andreferreira.entities.Game.Builder addGameBuilder() {
+      return getGameFieldBuilder().addBuilder(
           br.dev.andreferreira.entities.Game.getDefaultInstance());
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
-    public br.dev.andreferreira.entities.Game.Builder addGamesBuilder(
+    public br.dev.andreferreira.entities.Game.Builder addGameBuilder(
         int index) {
-      return getGamesFieldBuilder().addBuilder(
+      return getGameFieldBuilder().addBuilder(
           index, br.dev.andreferreira.entities.Game.getDefaultInstance());
     }
     /**
-     * <code>repeated .models.Game games = 1;</code>
+     * <code>repeated .models.Game game = 1;</code>
      */
     public java.util.List<br.dev.andreferreira.entities.Game.Builder> 
-         getGamesBuilderList() {
-      return getGamesFieldBuilder().getBuilderList();
+         getGameBuilderList() {
+      return getGameFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         br.dev.andreferreira.entities.Game, br.dev.andreferreira.entities.Game.Builder, br.dev.andreferreira.entities.GameOrBuilder> 
-        getGamesFieldBuilder() {
-      if (gamesBuilder_ == null) {
-        gamesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getGameFieldBuilder() {
+      if (gameBuilder_ == null) {
+        gameBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             br.dev.andreferreira.entities.Game, br.dev.andreferreira.entities.Game.Builder, br.dev.andreferreira.entities.GameOrBuilder>(
-                games_,
+                game_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        games_ = null;
+        game_ = null;
       }
-      return gamesBuilder_;
+      return gameBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
