@@ -5,10 +5,15 @@ package services;
 option java_multiple_files = true;
 option java_package = "br.dev.andreferreira.services";
 
+import "models/game.proto";
 import "services/GameResponse.proto";
+import "services/gamerequest.proto";
 import "google/protobuf/empty.proto";
 
 service GameService {
   // gRPC Unary - Request and Response
   rpc getAllGames(google.protobuf.Empty) returns (services.GameResponse);
+
+  // Create a new game
+  rpc createNewGame(services.GameRequest) returns (models.Game);
 }

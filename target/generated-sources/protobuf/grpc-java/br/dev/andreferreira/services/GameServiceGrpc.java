@@ -59,6 +59,38 @@ public final class GameServiceGrpc {
      return getGetAllGamesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequest,
+      br.dev.andreferreira.entities.Game> getCreateNewGameMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "createNewGame",
+      requestType = br.dev.andreferreira.services.GameRequest.class,
+      responseType = br.dev.andreferreira.entities.Game.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequest,
+      br.dev.andreferreira.entities.Game> getCreateNewGameMethod() {
+    io.grpc.MethodDescriptor<br.dev.andreferreira.services.GameRequest, br.dev.andreferreira.entities.Game> getCreateNewGameMethod;
+    if ((getCreateNewGameMethod = GameServiceGrpc.getCreateNewGameMethod) == null) {
+      synchronized (GameServiceGrpc.class) {
+        if ((getCreateNewGameMethod = GameServiceGrpc.getCreateNewGameMethod) == null) {
+          GameServiceGrpc.getCreateNewGameMethod = getCreateNewGameMethod = 
+              io.grpc.MethodDescriptor.<br.dev.andreferreira.services.GameRequest, br.dev.andreferreira.entities.Game>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "services.GameService", "createNewGame"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  br.dev.andreferreira.services.GameRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  br.dev.andreferreira.entities.Game.getDefaultInstance()))
+                  .setSchemaDescriptor(new GameServiceMethodDescriptorSupplier("createNewGame"))
+                  .build();
+          }
+        }
+     }
+     return getCreateNewGameMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -96,6 +128,16 @@ public final class GameServiceGrpc {
       asyncUnimplementedUnaryCall(getGetAllGamesMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Create a new game
+     * </pre>
+     */
+    public void createNewGame(br.dev.andreferreira.services.GameRequest request,
+        io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateNewGameMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -105,6 +147,13 @@ public final class GameServiceGrpc {
                 com.google.protobuf.Empty,
                 br.dev.andreferreira.services.GameResponse>(
                   this, METHODID_GET_ALL_GAMES)))
+          .addMethod(
+            getCreateNewGameMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                br.dev.andreferreira.services.GameRequest,
+                br.dev.andreferreira.entities.Game>(
+                  this, METHODID_CREATE_NEW_GAME)))
           .build();
     }
   }
@@ -137,6 +186,17 @@ public final class GameServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetAllGamesMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Create a new game
+     * </pre>
+     */
+    public void createNewGame(br.dev.andreferreira.services.GameRequest request,
+        io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateNewGameMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -165,6 +225,16 @@ public final class GameServiceGrpc {
     public br.dev.andreferreira.services.GameResponse getAllGames(com.google.protobuf.Empty request) {
       return blockingUnaryCall(
           getChannel(), getGetAllGamesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Create a new game
+     * </pre>
+     */
+    public br.dev.andreferreira.entities.Game createNewGame(br.dev.andreferreira.services.GameRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateNewGameMethod(), getCallOptions(), request);
     }
   }
 
@@ -196,9 +266,21 @@ public final class GameServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetAllGamesMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Create a new game
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<br.dev.andreferreira.entities.Game> createNewGame(
+        br.dev.andreferreira.services.GameRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateNewGameMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ALL_GAMES = 0;
+  private static final int METHODID_CREATE_NEW_GAME = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -220,6 +302,10 @@ public final class GameServiceGrpc {
         case METHODID_GET_ALL_GAMES:
           serviceImpl.getAllGames((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<br.dev.andreferreira.services.GameResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_NEW_GAME:
+          serviceImpl.createNewGame((br.dev.andreferreira.services.GameRequest) request,
+              (io.grpc.stub.StreamObserver<br.dev.andreferreira.entities.Game>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -283,6 +369,7 @@ public final class GameServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new GameServiceFileDescriptorSupplier())
               .addMethod(getGetAllGamesMethod())
+              .addMethod(getCreateNewGameMethod())
               .build();
         }
       }

@@ -23,12 +23,14 @@ public final class GameServiceOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032services/gameService.proto\022\010services\032\033" +
-      "services/GameResponse.proto\032\033google/prot" +
-      "obuf/empty.proto2L\n\013GameService\022=\n\013getAl" +
-      "lGames\022\026.google.protobuf.Empty\032\026.service" +
-      "s.GameResponseB!\n\035br.dev.andreferreira.s" +
-      "ervicesP\001b\006proto3"
+      "\n\032services/gameService.proto\022\010services\032\021" +
+      "models/game.proto\032\033services/GameResponse" +
+      ".proto\032\032services/gamerequest.proto\032\033goog" +
+      "le/protobuf/empty.proto2\202\001\n\013GameService\022" +
+      "=\n\013getAllGames\022\026.google.protobuf.Empty\032\026" +
+      ".services.GameResponse\0224\n\rcreateNewGame\022" +
+      "\025.services.GameRequest\032\014.models.GameB!\n\035" +
+      "br.dev.andreferreira.servicesP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -41,10 +43,14 @@ public final class GameServiceOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          br.dev.andreferreira.entities.GameOuterClass.getDescriptor(),
           br.dev.andreferreira.services.GameResponseOuterClass.getDescriptor(),
+          br.dev.andreferreira.services.Gamerequest.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
         }, assigner);
+    br.dev.andreferreira.entities.GameOuterClass.getDescriptor();
     br.dev.andreferreira.services.GameResponseOuterClass.getDescriptor();
+    br.dev.andreferreira.services.Gamerequest.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

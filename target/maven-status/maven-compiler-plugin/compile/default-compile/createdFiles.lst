@@ -1,5 +1,6 @@
 br/dev/andreferreira/entities/Platform.class
 br/dev/andreferreira/entities/GameOuterClass$1.class
+br/dev/andreferreira/entities/PlatformOuterClass.class
 br/dev/andreferreira/entities/GameOrBuilder.class
 br/dev/andreferreira/services/GameResponseOrBuilder.class
 br/dev/andreferreira/services/GameServiceGrpc$GameServiceBaseDescriptorSupplier.class
@@ -14,13 +15,20 @@ br/dev/andreferreira/services/GameServiceGrpc$GameServiceFileDescriptorSupplier.
 br/dev/andreferreira/services/GameServiceOuterClass$1.class
 br/dev/andreferreira/services/GameServiceGrpc$GameServiceStub.class
 br/dev/andreferreira/services/GameServiceOuterClass.class
+br/dev/andreferreira/services/GameRequest$1.class
+br/dev/andreferreira/entities/PlatformOuterClass$1.class
 br/dev/andreferreira/entities/Platform$1.class
+br/dev/andreferreira/services/GameRequest$Builder.class
 br/dev/andreferreira/services/GameServiceGrpc$GameServiceImplBase.class
 br/dev/andreferreira/services/GameServiceGrpc$1.class
 br/dev/andreferreira/services/GameResponseOuterClass.class
+br/dev/andreferreira/services/Gamerequest$1.class
 br/dev/andreferreira/entities/GameOuterClass.class
 br/dev/andreferreira/services/GameServiceGrpc$GameServiceFutureStub.class
 br/dev/andreferreira/entities/Game.class
+br/dev/andreferreira/services/GameRequestOrBuilder.class
 br/dev/andreferreira/services/GameServiceGrpc$GameServiceMethodDescriptorSupplier.class
+br/dev/andreferreira/services/GameRequest.class
 br/dev/andreferreira/services/GameResponse$1.class
 br/dev/andreferreira/services/GameResponse.class
+br/dev/andreferreira/services/Gamerequest.class

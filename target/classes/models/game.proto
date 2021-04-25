@@ -5,16 +5,12 @@ package models;
 option java_multiple_files = true;
 option java_package = "br.dev.andreferreira.entities";
 
-enum Platform {
-  UNKNOWN = 0;
-  PS4 = 1;
-  XBOX_ONE = 2;
-}
+import "models/platform.proto";
 
 message Game {
   int64 gameId = 1;
   string name = 2;
   string description = 3;
-  Platform platform = 4;
+  models.Platform platform = 4;
   double price = 5;
 }

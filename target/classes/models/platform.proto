@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package models;
+
+option java_multiple_files = true;
+option java_package = "br.dev.andreferreira.entities";
+
+enum Platform {
+  UNKNOWN = 0;
+  PS4 = 1;
+  XBOX_ONE = 2;
+}
